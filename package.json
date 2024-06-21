@@ -1,0 +1,14 @@
+{
+  "name": "discordforummodbot",
+  "version": "1.0.0",
+  "description": "Allows users to moderate their own threads (lock/unlock/pin main post)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dummiesman",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.2"
+  }
+}
