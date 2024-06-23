@@ -38,7 +38,7 @@ async function CheckOwner(user, channel)
     try
     {
         let starterMessage = await channel.fetchStarterMessage();
-        return starterMessage.author.id === user.id
+        return starterMessage.author.id === user.id;
     } catch(error) {
         // Probably deleted
         return false;
@@ -51,7 +51,7 @@ async function HandlePinCommand(interaction)
     // Check if this reaction happened in the forum channel we want
     if(!CheckChannel(interaction.channel))
     {
-        interaction.reply({content: "This command must be used in a forum channel.", ephemeral: true})
+        interaction.reply({content: "This command must be used in a forum channel.", ephemeral: true});
         return;
     }
 
@@ -71,7 +71,7 @@ async function HandleLockCommand(interaction)
     // Check if this reaction happened in the forum channel we want
     if(!CheckChannel(interaction.channel))
     {
-        interaction.reply({content: "This command must be used in a forum channel.", ephemeral: true})
+        interaction.reply({content: "This command must be used in a forum channel.", ephemeral: true});
         return;
     }
 
@@ -95,7 +95,7 @@ client.on(Events.ThreadCreate, async (channel) => {
 
     // Creation occurred in the correct spot, fetch first message and pin it!
     // fetchStarterMessage will fail if the message was deleted  before we got to it
-    console.log(`Pinning first message in new forum channel ${channel.name} ${channel.id}`)
+    console.log(`Pinning first message in new forum channel ${channel.name} ${channel.id}`);
     await channel.fetchStarterMessage().then(msg => msg.pin()).catch(err => void err);
 });
 
